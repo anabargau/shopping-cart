@@ -34,11 +34,12 @@ function Cart(props) {
           ))}
         </ul>
         <div>
-          Total price:
+          Subtotal:
           {' '}
           {totalPrice}
           $
         </div>
+        <button type="button">Check out</button>
       </div>
     </div>
   );
