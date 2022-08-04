@@ -1,5 +1,6 @@
 import React from 'react';
 import uniqid from 'uniqid';
+import CartIcon from './icons/cart.png';
 
 function Cart(props) {
   const { cart, removeFromCart } = props;
@@ -10,36 +11,38 @@ function Cart(props) {
     totalPrice += item.quantity * parseInt(item.item.price[0] + item.item.price[1]);
   });
   function dropdownClick() {
-    const elem = document.getElementById('cart');
+    const elem = document.getElementById('cart-content');
     elem.classList.toggle('show');
   }
   return (
     <div>
-      <button type="button" className="dropdown" onClick={dropdownClick}>
-        Cart (
-        {productsNum}
-        )
-      </button>
       <div id="cart">
-        <ul className="cart-content show">
-          {cart.map((item) => (
-            <li key={uniqid()}>
-              {item.item.title}
-              {' '}
-              {item.item.price}
-              {' '}
-              {item.quantity}
-              <button data-index={item.item.id} type="button" onClick={removeFromCart}>X</button>
-            </li>
-          ))}
-        </ul>
-        <div>
-          Subtotal:
+        <button type="button" className="dropdown" onClick={dropdownClick}>
+          <img className="cart-icon" src={CartIcon} alt="cart icon" />
           {' '}
-          {totalPrice}
-          $
+          (
+          {productsNum}
+          )
+        </button>
+        <div className="cart-content" id="cart-content">
+          <ul className="item-list">
+            {cart.map((item) => (
+              <li className="cart-item" key={uniqid()}>
+                <div className="item-title">{item.item.title}</div>
+                <div className="item-price">{item.item.price}</div>
+                <div className="item-quantity">{item.quantity}</div>
+                <button className="delete-item" data-index={item.item.id} type="button" onClick={removeFromCart}>X</button>
+              </li>
+            ))}
+          </ul>
+          <div className="subtotal">
+            Subtotal:
+            {' '}
+            {totalPrice}
+            $
+          </div>
+          <button type="button" className="checkout">Check out</button>
         </div>
-        <button type="button">Check out</button>
       </div>
     </div>
   );
