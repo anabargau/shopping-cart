@@ -2,7 +2,9 @@ import React from 'react';
 
 function Home() {
   return (
-    <div>Welcome to the best pet shop ever!</div>
+    <div className="home">
+      <div className="welcome">Welcome to the best pet shop ever!</div>
+    </div>
   );
 }
 

@@ -35,6 +35,7 @@ function Cart(props) {
               </li>
             ))}
           </ul>
+          {cart.length === 0 ? <div>You have no items yet :(</div> : null}
           <div className="subtotal">
             Subtotal:
             {' '}
