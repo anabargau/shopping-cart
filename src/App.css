@@ -245,6 +245,10 @@ button {
     border-radius: 8px;
 }
 
+button:hover {
+    filter: brightness(80%);
+}
+
 select {
     padding: 10px;
     border: none;
