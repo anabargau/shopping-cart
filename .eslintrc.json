@@ -22,6 +22,9 @@
         "react/prop-types": "off",
         "max-len": "off",
         "react/jsx-no-bind": "off",
-        "radix": "off"
+        "radix": "off",
+        "implicit-arrow-linebreak": "off",
+        "comma-dangle":"off",
+        "function-paren-newline":"off"
     }
 }

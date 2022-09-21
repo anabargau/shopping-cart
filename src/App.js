@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Shop from './components/Shop';
-import Home from './components/Home';
-import Nav from './components/Nav';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import Home from './components/Home';
 import allProducts from './components/images/all';
+import Nav from './components/Nav';
+import Shop from './components/Shop';
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -26,14 +26,18 @@ function App() {
       let newCart = [];
       newCart = cart.map((element) => {
         const newQuantity = element.quantity + quantity;
-        return element.item.id === id ? { ...element, quantity: newQuantity } : element;
+        return element.item.id === id
+          ? { ...element, quantity: newQuantity }
+          : element;
       });
       setCart(newCart);
     } else {
-      setCart((prevCart) => prevCart.concat({
-        item,
-        quantity,
-      }));
+      setCart((prevCart) =>
+        prevCart.concat({
+          item,
+          quantity,
+        })
+      );
     }
   }
 
@@ -46,7 +50,7 @@ function App() {
     <Router>
       <Nav cart={cart} removeFromCart={removeFromCart} />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" index element={<Home />} />
         <Route path="shop/*" element={<Shop addToCart={addToCart} />} />
       </Routes>
     </Router>
