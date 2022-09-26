@@ -50,7 +50,7 @@ function App() {
     <Router>
       <Nav cart={cart} removeFromCart={removeFromCart} />
       <Routes>
-        <Route index path="/" element={<Home />} />
+        <Route index path="/*" element={<Home />} />
         <Route path="shop/*" element={<Shop addToCart={addToCart} />} />
       </Routes>
     </Router>
