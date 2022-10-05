@@ -1,6 +1,6 @@
 # Happy Paws
 ## What is it?
-It is an online pet shop, where you can buy everything from food and toys, to grooming products for your furry friends. It consist of a home page and a shop page. The shop page also has 3 additional tabs for each category of products. You can add to cart up to 5 products of the same type at once. In the cart you can see all the products you added grouped by type and the total price of the cart content. The checkout button doesn't have any functionality yet, because it was beyond the scope of the lesson.
+It is an online pet shop, where you can buy everything from food and toys, to grooming products for your furry friends. It consist of a home page and a shop page. The shop page also has 4 additional tabs for each category of products. You can add to cart up to 5 products of the same type at once. In the cart you can see all the products you added grouped by type and the total price of the cart content. The checkout button doesn't have any functionality yet, because it was beyond the scope of the lesson.
 
 ## Techonolgies used:
 * React
